@@ -28,9 +28,8 @@ jobs:
       run: |
         pyinstaller --noconfirm --windowed --clean -n RealtimeSalaryCalculator main.py
 
-    - name: Upload artifact to Release
-      uses: softprops/action-gh-release@v1
+    - name: Upload built exe as artifact
+      uses: actions/upload-artifact@v3
       with:
-        files: dist/RealtimeSalaryCalculator/RealtimeSalaryCalculator.exe
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        name: RealtimeSalaryCalculator
+        path: dist/RealtimeSalaryCalculator/RealtimeSalaryCalculator.exe
