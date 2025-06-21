@@ -28,8 +28,9 @@ jobs:
       run: |
         pyinstaller --noconfirm --windowed --clean --onefile -n RealtimeSalaryCalculator main.py
 
-    - name: Upload built exe as artifact
+        - name: Upload built exe as artifact
       uses: actions/upload-artifact@v4
       with:
         name: RealtimeSalaryCalculator
-        path: dist/RealtimeSalaryCalculator/RealtimeSalaryCalculator.exe
+        path: dist/RealtimeSalaryCalculator.exe
+
